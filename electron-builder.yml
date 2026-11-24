@@ -1,0 +1,23 @@
+appId: com.docscanner.app
+productName: Document Scanner & PDF Editor
+directories:
+  output: release
+files:
+  - dist/**
+  - dist-electron/**
+  - package.json
+  - resources/icon.png
+extraResources:
+  - from: resources/tessdata
+    to: tessdata
+win:
+  target: nsis
+  icon: resources/icon.ico
+  artifactName: ${productName}-${version}-setup.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Document Scanner & PDF Editor
